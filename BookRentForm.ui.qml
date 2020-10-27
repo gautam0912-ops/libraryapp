@@ -1,7 +1,9 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
+
 import QtQuick.Controls 1.4
 
+//import QtQuick.Controls 2.15
 Page {
     width: 700
     height: 600
@@ -13,6 +15,14 @@ Page {
     property alias listmousearea: listmousearea
     property alias searchbox: searchbox
     property alias searchboxbutton: searchboxbutton
+    property alias textInputName: textInputName
+    property alias textInputDescription: textInputDescription
+    property alias textInputPublishDate: textInputPublishDate
+    property alias textInputAuthors: textInputAuthors
+    property alias textInputAvailable: textInputAvailable
+    property alias textInputAvailableto: textInputAvailableto
+    property alias usersbox: usersbox
+    property alias usersmodel: usersmodel
 
     Rectangle {
         id: searchbox
@@ -393,7 +403,7 @@ Page {
         width: 100
         height: 20
         font.pixelSize: 12
-        text: qsTr("Assigned")
+        text: qsTr("Available")
     }
     Rectangle {
         x: 270
@@ -404,7 +414,7 @@ Page {
         border.width: 2
         Text {
             anchors.fill: parent
-            id: textInputAssigned
+            id: textInputAvailable
             text: qsTr("")
             font.pixelSize: 12
             padding: 5
@@ -420,7 +430,7 @@ Page {
         border.width: 2
         Text {
             anchors.fill: parent
-            id: textInputAssignedto
+            id: textInputAvailableto
             text: qsTr("")
             font.pixelSize: 12
             padding: 5
@@ -472,9 +482,11 @@ Page {
             currentIndex: 1
             id: usersbox
             anchors.fill: parent
+
             model: ListModel {
                 id: usersmodel
             }
+            textRole: "name"
         }
     }
 
