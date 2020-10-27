@@ -5,7 +5,7 @@ ApplicationWindow {
     id: window
     visible: true
     width: 700
-    height: 600
+    height: 660
     title: qsTr("Stack")
     property alias footerlabel: footerlabel
 

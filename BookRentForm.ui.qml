@@ -1,9 +1,10 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
+import QtQuick.Controls 1.4
 
 Page {
-    width: 600
-    height: 400
+    width: 700
+    height: 600
 
     id: listpage
     title: qsTr("Book List")
@@ -51,7 +52,7 @@ Page {
         x: 70
         y: 50
         width: 400
-        height: 160
+        height: 200
         highlightRangeMode: ListView.NoHighlightRange
 
         model: ListModel {
@@ -222,6 +223,301 @@ Page {
                     border.width: 2
                 }
             }
+        }
+    }
+
+    Text {
+        id: nametext
+        x: 140
+        y: 300
+        width: 73
+        height: 20
+        text: qsTr("Name")
+        font.pixelSize: 12
+    }
+    Rectangle {
+        x: 270
+        y: nametext.y
+        width: 204
+        height: 20
+        border.color: black
+        border.width: 2
+        TextInput {
+            anchors.fill: parent
+            id: textInputName
+            text: qsTr("")
+            font.pixelSize: 12
+            padding: 5
+            focus: true
+        }
+    }
+
+    Text {
+        id: element1
+        x: 140
+        y: nametext.y + 30
+        width: 119
+        height: 20
+        text: qsTr("description")
+        font.pixelSize: 12
+    }
+    Rectangle {
+        x: 270
+        y: nametext.y + 30
+        width: 204
+        height: 20
+        border.color: black
+        border.width: 2
+        TextInput {
+            anchors.fill: parent
+            id: textInputDescription
+            text: qsTr("")
+            font.pixelSize: 12
+            padding: 5
+            focus: true
+        }
+    }
+
+    Text {
+        id: element2
+        x: 140
+        y: nametext.y + 60
+        width: 119
+        height: 20
+        text: qsTr("Publish Date")
+        elide: Text.ElideRight
+        font.pixelSize: 12
+    }
+    Rectangle {
+        x: 270
+        y: nametext.y + 60
+        width: 200
+        height: 20
+        border.color: black
+        border.width: 2
+        Text {
+            anchors.fill: parent
+            id: textInputPublishDate
+            text: qsTr("")
+            font.pixelSize: 12
+            padding: 5
+            focus: true
+        }
+    }
+    Button {
+        id: datechooser
+        width: 50
+        height: 20
+        x: 480
+        y: nametext.y + 60
+        Text {
+            id: name1
+            anchors.fill: parent
+            text: qsTr("Select")
+            color: "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            padding: 5
+        }
+        onClicked: calendar1.visible = true
+    }
+    Calendar {
+        id: calendar1
+        visible: false
+        x: 270
+        y: nametext.y + 80
+        z: 3
+    }
+
+    Text {
+        id: element3
+        x: 140
+        y: nametext.y + 90
+        width: 119
+        height: 20
+        font.pixelSize: 12
+        text: qsTr("Authors")
+    }
+    Rectangle {
+        x: 270
+        y: nametext.y + 90
+        width: 204
+        height: 20
+        border.color: black
+        border.width: 2
+        Text {
+            anchors.fill: parent
+            id: textInputAuthors
+            text: qsTr("")
+            font.pixelSize: 12
+            padding: 5
+            focus: true
+        }
+    }
+    Rectangle {
+        x: 270
+        y: nametext.y + 110
+        width: 204
+        height: 20
+        border.color: black
+        border.width: 2
+        ComboBox {
+            currentIndex: 1
+            id: authorsbox
+            anchors.fill: parent
+            model: ListModel {
+                id: authorsmodel
+            }
+        }
+    }
+    Button {
+        width: 150
+        height: 20
+        id: addauthor
+        x: 270
+        y: nametext.y + 130
+        Text {
+            id: name2
+            anchors.fill: parent
+            text: qsTr("Add Author")
+            color: "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
+
+    Text {
+        id: element4
+        x: 140
+        y: nametext.y + 160
+        width: 100
+        height: 20
+        font.pixelSize: 12
+        text: qsTr("Assigned")
+    }
+    Rectangle {
+        x: 270
+        y: nametext.y + 160
+        width: 30
+        height: 20
+        border.color: black
+        border.width: 2
+        Text {
+            anchors.fill: parent
+            id: textInputAssigned
+            text: qsTr("")
+            font.pixelSize: 12
+            padding: 5
+            focus: true
+        }
+    }
+    Rectangle {
+        x: 300
+        y: nametext.y + 160
+        width: 170
+        height: 20
+        border.color: black
+        border.width: 2
+        Text {
+            anchors.fill: parent
+            id: textInputAssignedto
+            text: qsTr("")
+            font.pixelSize: 12
+            padding: 5
+            focus: true
+        }
+    }
+    Button {
+        id: datechooserrent
+        width: 50
+        height: 20
+        x: 480
+        y: nametext.y + 160
+        Text {
+            id: name3
+            anchors.fill: parent
+            text: qsTr("Select")
+            color: "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            padding: 5
+        }
+        onClicked: calendar1.visible = true
+    }
+    Calendar {
+        id: calendarrent
+        visible: false
+        x: 300
+        y: nametext.y + 180
+        z: 3
+    }
+
+    Text {
+        id: element5
+        x: 140
+        y: nametext.y + 200
+        width: 100
+        height: 20
+        font.pixelSize: 12
+        text: qsTr("User")
+    }
+    Rectangle {
+        x: 270
+        y: nametext.y + 200
+        width: 200
+        height: 20
+        border.color: black
+        border.width: 2
+        ComboBox {
+            currentIndex: 1
+            id: usersbox
+            anchors.fill: parent
+            model: ListModel {
+                id: usersmodel
+            }
+        }
+    }
+
+    Button {
+        width: 100
+        height: 30
+        id: registrationbutton
+        x: 200
+        y: nametext.y + 240
+        Text {
+            anchors.fill: parent
+            text: qsTr("Update")
+            color: "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
+    Button {
+        width: 100
+        height: 30
+        id: rentbutton
+        x: 310
+        y: nametext.y + 240
+        Text {
+            anchors.fill: parent
+            text: qsTr("Rent")
+            color: "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
+    Button {
+        width: 100
+        height: 30
+        id: returnbutton
+        x: 420
+        y: nametext.y + 240
+        Text {
+            anchors.fill: parent
+            text: qsTr("Return")
+            color: "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
         }
     }
 }
