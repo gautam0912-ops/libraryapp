@@ -10,12 +10,46 @@ Page {
     property alias booklistmodel: booklistmodel
     property alias booklistview: booklistview
     property alias listmousearea: listmousearea
+    property alias searchbox: searchbox
+    property alias searchboxbutton: searchboxbutton
 
-    //property alias mousearea1: mousearea1
+    Rectangle {
+        id: searchbox
+        width: 200
+        height: 20
+        y: 20
+        x: 120
+        anchors.left: searchtext.right
+        border.color: black
+        border.width: 2
+        TextInput {
+            text: ""
+            anchors.fill: parent
+            anchors.verticalCenter: parent.verticalCenter
+            font.bold: true
+        }
+    }
+    Button {
+        id: searchboxbutton
+        width: 50
+        height: 20
+        y: 20
+        anchors.left: searchbox.right
+        Text {
+            id: name
+            anchors.fill: parent
+            text: qsTr("Search")
+            color: "black"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            padding: 5
+        }
+    }
+
     ListView {
         id: booklistview
         x: 70
-        y: 30
+        y: 50
         width: 400
         height: 160
         highlightRangeMode: ListView.NoHighlightRange
@@ -75,8 +109,19 @@ Page {
                 }
                 Rectangle {
                     anchors.left: hcol3.right
-                    width: 10
+                    width: 100
                     id: hcol4
+                    Text {
+                        text: "AUTHORS"
+                        anchors.fill: parent
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.bold: true
+                    }
+                }
+                Rectangle {
+                    anchors.left: hcol4.right
+                    width: 10
+                    id: hcol5
                     Text {
                         text: "AVAILABILITY"
                         anchors.fill: parent
@@ -145,7 +190,7 @@ Page {
                     border.width: 2
                 }
                 Rectangle {
-                    anchors.left: irow3right
+                    anchors.left: irow3.right
                     width: 100
                     id: irow4
                     Text {

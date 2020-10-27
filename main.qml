@@ -38,7 +38,14 @@ ApplicationWindow {
 
         Column {
             anchors.fill: parent
-
+            ItemDelegate {
+                text: qsTr("BookRent")
+                width: parent.width
+                onClicked: {
+                    stackView.push("BookRent.qml")
+                    drawer.close()
+                }
+            }
             ItemDelegate {
                 text: qsTr("UserRegistration")
                 width: parent.width
@@ -68,14 +75,6 @@ ApplicationWindow {
                 width: parent.width
                 onClicked: {
                     stackView.push("Book.qml")
-                    drawer.close()
-                }
-            }
-            ItemDelegate {
-                text: qsTr("Page 2")
-                width: parent.width
-                onClicked: {
-                    stackView.push("Page2Form.ui.qml")
                     drawer.close()
                 }
             }
