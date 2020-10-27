@@ -139,7 +139,7 @@ Page {
 
             MouseArea {
                 anchors.fill: parent
-                onClicked: userlistview.currentIndex = index
+                onClicked: booklistview.currentIndex = index
             }
 
             Row {
