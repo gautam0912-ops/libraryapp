@@ -6,9 +6,9 @@ Page {
     height: 400
 
     title: qsTr("User Registration")
-    property alias registrationbutton: registrationbutton
     property alias textInputLastName: textInputLastName
     property alias textInputName: textInputName
+    property alias registrationbutton: registrationbutton
 
     Rectangle {
         x: 271
@@ -74,7 +74,7 @@ Page {
             id: name
             anchors.fill: parent
             text: qsTr("Register")
-            color: "white"
+            color: "black"
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }

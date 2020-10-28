@@ -75,7 +75,7 @@ Page {
             id: name
             anchors.fill: parent
             text: qsTr("Register")
-            color: "white"
+            color: "black"
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
