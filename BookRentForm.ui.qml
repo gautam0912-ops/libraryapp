@@ -63,11 +63,16 @@ Page {
 
     ListView {
         id: booklistview
-        x: 70
+        x: 20
         y: 50
-        width: 400
+        width: 650
         height: 200
         highlightRangeMode: ListView.NoHighlightRange
+        ScrollBar.vertical: ScrollBar {}
+        flickableDirection: Flickable.VerticalFlick
+        boundsBehavior: Flickable.StopAtBounds
+        clip: true
+        headerPositioning: ListView.OverlayHeader
 
         model: ListModel {
             id: booklistmodel
@@ -82,10 +87,11 @@ Page {
             anchors.fill: parent
         }
 
-        header: Item {
+        header: Rectangle {
             x: 5
             height: 40
-            width: 300
+            width: 600
+            z: 2
             Row {
                 spacing: 10
 
@@ -102,7 +108,7 @@ Page {
                 }
                 Rectangle {
                     anchors.left: hcol1.right
-                    width: 100
+                    width: 200
                     id: hcol2
                     Text {
                         text: "NAME"
@@ -113,7 +119,7 @@ Page {
                 }
                 Rectangle {
                     anchors.left: hcol2.right
-                    width: 100
+                    width: 150
                     id: hcol3
                     Text {
                         text: "DESCRIPTION"
@@ -124,7 +130,7 @@ Page {
                 }
                 Rectangle {
                     anchors.left: hcol3.right
-                    width: 100
+                    width: 150
                     id: hcol4
                     Text {
                         text: "AUTHORS"
@@ -135,7 +141,7 @@ Page {
                 }
                 Rectangle {
                     anchors.left: hcol4.right
-                    width: 10
+                    width: 30
                     id: hcol5
                     Text {
                         text: "AVAILABILITY"
@@ -174,7 +180,7 @@ Page {
                 }
                 Rectangle {
                     anchors.left: irow1.right
-                    width: 100
+                    width: 200
                     id: irow2
                     Text {
                         text: name
@@ -190,7 +196,7 @@ Page {
                 }
                 Rectangle {
                     anchors.left: irow2.right
-                    width: 100
+                    width: 150
                     id: irow3
                     Text {
                         text: description
@@ -206,7 +212,7 @@ Page {
                 }
                 Rectangle {
                     anchors.left: irow3.right
-                    width: 100
+                    width: 150
                     id: irow4
                     Text {
                         text: authors
@@ -225,13 +231,11 @@ Page {
                     width: 10
                     id: irow5
                     Text {
-                        text: availability
+                        text: available === 1 ? "YES" : "NO"
                         anchors.fill: parent
-                        wrapMode: Text.WordWrap
-                        elide: Text.ElideLeft
                         maximumLineCount: 1
                         anchors.verticalCenter: parent.verticalCenter
-                        width: 100
+                        width: 30
                     }
                     border.color: black
                     border.width: 2

@@ -67,6 +67,24 @@
       "dob": "Harari",
       "gender": "M",
       "id": 4
+    },
+    {
+      "name": "Richard Hawking",
+      "dob": "12/09/1975",
+      "gender": "M",
+      "id": 5
+    },
+    {
+      "name": "Deepak Chopra",
+      "dob": "12/12/1979",
+      "gender": "M",
+      "id": 6
+    },
+    {
+      "name": "Yang Yang",
+      "dob": "11/11/1987",
+      "gender": "F",
+      "id": 7
     }
   ],
   "books": [
@@ -108,13 +126,79 @@
       "id": 5
     },
     {
+      "user": 7,
+      "availability_to": "Sat Oct 31 12:00:00 2020 GMT+0530",
       "name": "nnnn",
       "description": "nnnnn",
-      "authors": "Enid Blyton",
       "publishdate": "Mon Sep 14 12:00:00 2020 GMT+0530",
-      "availability_to": "Tue Oct 27 13:37:23 2020 GMT+0530",
-      "availability": 1,
+      "authors": "Sat Oct 31 12:00:00 2020 GMT+0530",
+      "availability": 0,
       "id": 6
+    },
+    {
+      "user": 6,
+      "availability_to": "Sat Oct 31 12:00:00 2020 GMT+0530",
+      "name": "Blood sweat and Tears",
+      "description": "Bloody",
+      "publishdate": "Mon Jun 8 12:00:00 2020 GMT+0530",
+      "authors": "Sat Oct 31 12:00:00 2020 GMT+0530",
+      "availability": 0,
+      "id": 7
+    },
+    {
+      "name": "Theory of Everything",
+      "description": "About the universe",
+      "authors": "Richard Hawking",
+      "publishdate": "Tue Sep 4 12:00:00 2018 GMT+0530",
+      "availability_to": "Wed Oct 28 15:05:26 2020 GMT+0530",
+      "availability": 1,
+      "id": 8
+    },
+    {
+      "user": 3,
+      "availability_to": "Sat Oct 31 12:00:00 2020 GMT+0530",
+      "name": "The Universe",
+      "description": "about the universe",
+      "publishdate": "Mon Mar 12 12:00:00 2018 GMT+0530",
+      "authors": "Sat Oct 31 12:00:00 2020 GMT+0530",
+      "availability": 0,
+      "id": 9
+    },
+    {
+      "name": "The Subconcious",
+      "description": "subconcious",
+      "authors": "Deepak Chopra",
+      "publishdate": "Mon Nov 13 12:00:00 2017 GMT+0530",
+      "availability_to": "Wed Oct 28 15:06:51 2020 GMT+0530",
+      "availability": 1,
+      "id": 10
+    },
+    {
+      "name": "The Doctor",
+      "description": "the doctor",
+      "authors": "Deepak Chopra",
+      "publishdate": "Mon Jul 13 12:00:00 2020 GMT+0530",
+      "availability_to": "Wed Oct 28 15:07:32 2020 GMT+0530",
+      "availability": 1,
+      "id": 11
+    },
+    {
+      "name": "Yoga for the mind",
+      "description": "mind yoga",
+      "authors": "Deepak Chopra",
+      "publishdate": "Mon Mar 2 12:00:00 2020 GMT+0530",
+      "availability_to": "Wed Oct 28 15:07:59 2020 GMT+0530",
+      "availability": 1,
+      "id": 12
+    },
+    {
+      "name": "The orient express",
+      "description": "the orient express",
+      "authors": "Yang Yang",
+      "publishdate": "Mon Nov 4 12:00:00 2019 GMT+0530",
+      "availability_to": "Wed Oct 28 15:08:26 2020 GMT+0530",
+      "availability": 1,
+      "id": 13
     }
   ],
   "posts": [

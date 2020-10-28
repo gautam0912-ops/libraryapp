@@ -26,8 +26,14 @@ BookRentForm {
 
         textInputAvailableto.text = (new Date(booklistmodel.get(booklistview.currentIndex).availability_to)).toLocaleDateString()
         textInputAvailabletoFull = (new Date(booklistmodel.get(booklistview.currentIndex).availability_to)).toString()
-        if(booklistmodel.get(booklistview.currentIndex).available !== 1) {
-
+        if(booklistmodel.get(booklistview.currentIndex).available === 0) {
+            var userid = booklistmodel.get(booklistview.currentIndex).user
+            for(var i = 0; i < usersmodel.count; i++) {
+                if(userid === usersmodel.get(i).id) {
+                    usersbox.currentIndex = i
+                    break
+                }
+            }
         }
     }
 
@@ -91,6 +97,7 @@ BookRentForm {
                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                        footerlabel.text = "Book has been rented successfully"
                        textInputAvailable.text = 'NO'
+                       booklistmodel.setProperty(booklistview.currentIndex, 'available', 0)
                    }
                    else if(xmlhttp.readyState == 4) {
                        footerlabel.text = "Book rent failed"
@@ -113,7 +120,7 @@ BookRentForm {
                        var objarr = JSON.parse(xmlhttp.responseText);
                        for(var i = 0; i < objarr.length; i++) {
                            var obj = objarr[i];
-                           booklistmodel.append({'id':obj.id, 'name': obj.name, 'description': obj.description, 'publishdate': obj.publishdate, 'available': obj.availability, 'availability_to': obj.availability_to, 'authors': obj.authors, 'rentuser': obj.rentuser})
+                           booklistmodel.append({'id':obj.id, 'name': obj.name, 'description': obj.description, 'publishdate': obj.publishdate, 'available': obj.availability, 'availability_to': obj.availability_to, 'authors': obj.authors, 'user': obj.user})
                        }
                    }
                    else if(xmlhttp.readyState == 4) {
