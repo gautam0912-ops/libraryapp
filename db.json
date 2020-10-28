@@ -110,19 +110,20 @@
       "authors": "sample"
     },
     {
-      "name": "wwwww",
-      "description": "wwwww",
-      "authors": "Jeffery Archer",
-      "publishdate": "Mon Sep 21 12:00:00 2020 GMT+0530",
+      "user": 2,
       "availability_to": "Tue Oct 27 12:54:27 2020 GMT+0530",
+      "name": "The moment of truth",
+      "description": "Clifton chronicles",
+      "publishdate": "Mon Sep 21 12:00:00 2020 GMT+0530",
+      "authors": "Jeffery Archer",
       "availability": 1,
       "id": 3
     },
     {
       "user": 3,
       "availability_to": "Fri Oct 30 12:00:00 2020 GMT+0530",
-      "name": "pppppppp",
-      "description": "wwwwww",
+      "name": "The curse of the bell",
+      "description": "clifton chronicles",
       "publishdate": "Tue Aug 4 12:00:00 2020 GMT+0530",
       "authors": "Jeffery Archer",
       "availability": 0,
@@ -138,10 +139,10 @@
       "id": 5
     },
     {
-      "user": 7,
+      "user": 2,
       "availability_to": "Wed Oct 28 19:17:51 2020 GMT+0530",
-      "name": "nnnn",
-      "description": "nnnnn",
+      "name": "Clifton Chronicals",
+      "description": "The clifton series",
       "publishdate": "Mon Sep 14 12:00:00 2020 GMT+0530",
       "authors": "Jeffery Archer",
       "availability": 1,
@@ -168,13 +169,13 @@
       "id": 8
     },
     {
-      "user": 3,
-      "availability_to": "Wed Oct 28 19:59:08 2020 GMT+0530",
+      "user": 8,
+      "availability_to": "Sat Oct 31 12:00:00 2020 GMT+0530",
       "name": "The Universe",
       "description": "about the universe",
       "publishdate": "Mon Mar 12 12:00:00 2018 GMT+0530",
       "authors": "Richard Hawking",
-      "availability": 1,
+      "availability": 0,
       "id": 9
     },
     {
@@ -225,6 +226,26 @@
       "date": "Wed Oct 28 19:59:15 2020 GMT+0530",
       "info": "Book id=9 has been returned by3",
       "id": 2
+    },
+    {
+      "date": "Wed Oct 28 21:10:17 2020 GMT+0530",
+      "info": "Book id=6 has been updated",
+      "id": 3
+    },
+    {
+      "date": "Wed Oct 28 21:13:13 2020 GMT+0530",
+      "info": "Book id=3 has been updated",
+      "id": 4
+    },
+    {
+      "date": "Wed Oct 28 21:16:05 2020 GMT+0530",
+      "info": "Book id=4 has been updated",
+      "id": 5
+    },
+    {
+      "date": "Wed Oct 28 21:16:38 2020 GMT+0530",
+      "info": "Book id=9 has been rented successfully to 8",
+      "id": 6
     }
   ]
 }

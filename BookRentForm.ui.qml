@@ -27,6 +27,7 @@ Page {
     property alias usersmodel: usersmodel
     property alias rentbutton: rentbutton
     property alias returnbutton: returnbutton
+    property alias updatebutton: updatebutton
     property alias calendarrent: calendarrent
     property alias addauthor: addauthor
 
@@ -505,7 +506,7 @@ Page {
     Button {
         width: 100
         height: 30
-        id: registrationbutton
+        id: updatebutton
         x: 200
         y: nametext.y + 240
         Text {

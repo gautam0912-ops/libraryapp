@@ -6,7 +6,7 @@ ApplicationWindow {
     visible: true
     width: 700
     height: 660
-    title: qsTr("Stack")
+    title: qsTr("Library Application")
     property alias footerlabel: footerlabel
     property string currentmode
     property string authtoken

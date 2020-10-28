@@ -30,8 +30,8 @@ BookRentForm {
             var userid = booklistmodel.get(booklistview.currentIndex).user
             for(var i = 0; i < usersmodel.count; i++) {
                 if(userid === usersmodel.get(i).id) {
-                    usersbox.currentIndex = i
-                    break
+                    usersbox.currentIndex = i;
+                    break;
                 }
             }
         }
@@ -119,6 +119,17 @@ BookRentForm {
                     '"availability":1'
                               +'}';
         }
+        else if(type === 'update') {
+            text1 =     '{"user":' + usrid + ','+
+                              '"availability_to":"' + textInputAvailabletoFull + '",'+
+                    '"name":"' + textInputName.text + '",'+
+                    '"description":"' + textInputDescription.text + '",'+
+                    '"publishdate":"' + textInputPublishDateFull + '",'+
+                    '"authors":"' + textInputAuthors.text + '",'+
+                    '"availability":'+(booklistmodel.get(booklistview.currentIndex).available).toString()
+                              +'}';
+        }
+
 
         var obj1 = JSON.parse(text1)
 
@@ -138,8 +149,14 @@ BookRentForm {
                            booklistmodel.setProperty(booklistview.currentIndex, 'available', 1)
                            logitem.printLog(footerlabel.text)
                        }
+                       else if(type === 'update')
+                       {
+                           footerlabel.text = "Book id="+selid.toString()+" has been updated"
+                           logitem.printLog(footerlabel.text)
+                           getData('')
+                       }
                    }
-                   else if(xmlhttp.readyState == 4) {
+                   else if(xmlhttp.readyState === 4) {
                        footerlabel.text = "Operation failed"
                    }
                }
@@ -221,6 +238,10 @@ BookRentForm {
         console.info('calling the URL.....')
         xmlhttp.open("GET", theUrl);
         xmlhttp.send();
+    }
+
+    updatebutton.onClicked: {
+        rentFunction('update')
     }
 
     addauthor.onClicked: {
