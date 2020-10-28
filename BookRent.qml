@@ -38,7 +38,7 @@ BookRentForm {
     }
 
     searchboxbutton.onClicked: {
-
+        getData(searchboxtext.text)
     }
 
     listmousearea.onClicked: {
@@ -55,7 +55,7 @@ BookRentForm {
     }
 
     Component.onCompleted: {
-        getData()
+        getData("")
         getUserData()
         booklistview.currentIndex = -1
     }
@@ -112,10 +112,36 @@ BookRentForm {
         xmlhttp.send(JSON.stringify(obj1));
     }
 
-    function getData() {
-        var xmlhttp = new XMLHttpRequest();
+    function clearPage() {
+        booklistmodel.clear()
+        textInputName.text = ''
+        textInputDescription.text = ''
+        textInputPublishDate.text = ''
+        textInputPublishDateFull = ''
+        textInputAuthors.text = ''
+        textInputAvailable.text = ''
+        textInputAvailableto.text = ''
+        textInputAvailabletoFull = ''
+        booklistview.currentIndex = -1
+    }
 
+    function getData(searchstring) {
+        clearPage()
+        var xmlhttp = new XMLHttpRequest();
         var theUrl = "http://localhost:3000/books";
+
+        if(searchstring !== '') {
+            theUrl = theUrl + '?q=' + searchstring
+            if(currentmode === 'allrents') {
+                theUrl = theUrl + '&availability=0'
+            }
+        }
+        else {
+            if(currentmode === 'allrents') {
+                theUrl = theUrl + '?availability=0'
+            }
+        }
+
         console.info("Getting book list......")
 
         xmlhttp.onreadystatechange=function() {

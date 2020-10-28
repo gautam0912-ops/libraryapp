@@ -13,7 +13,7 @@ Page {
     property alias booklistmodel: booklistmodel
     property alias booklistview: booklistview
     property alias listmousearea: listmousearea
-    property alias searchbox: searchbox
+    property alias searchboxtext: searchboxtext
     property alias searchboxbutton: searchboxbutton
     property alias textInputName: textInputName
     property alias textInputDescription: textInputDescription
@@ -33,15 +33,17 @@ Page {
         width: 200
         height: 20
         y: 20
-        x: 120
+        x: 190
         anchors.left: searchtext.right
         border.color: black
         border.width: 2
         TextInput {
+            id: searchboxtext
             text: ""
             anchors.fill: parent
             anchors.verticalCenter: parent.verticalCenter
             font.bold: true
+            padding: 4
         }
     }
     Button {
@@ -90,7 +92,7 @@ Page {
         header: Rectangle {
             x: 5
             height: 40
-            width: 600
+            width: 650
             z: 2
             Row {
                 spacing: 10
@@ -155,7 +157,7 @@ Page {
 
         delegate: Item {
             x: 5
-            width: 400
+            width: 650
             height: 20
 
             MouseArea {

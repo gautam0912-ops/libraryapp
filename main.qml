@@ -8,6 +8,7 @@ ApplicationWindow {
     height: 660
     title: qsTr("Stack")
     property alias footerlabel: footerlabel
+    property string currentmode
 
     header: ToolBar {
         contentHeight: toolButton.implicitHeight
@@ -39,9 +40,19 @@ ApplicationWindow {
         Column {
             anchors.fill: parent
             ItemDelegate {
-                text: qsTr("BookRent")
+                text: qsTr("All Books")
                 width: parent.width
                 onClicked: {
+                    currentmode = 'allbooks'
+                    stackView.push("BookRent.qml")
+                    drawer.close()
+                }
+            }
+            ItemDelegate {
+                text: qsTr("All Rents")
+                width: parent.width
+                onClicked: {
+                    currentmode = 'allrents'
                     stackView.push("BookRent.qml")
                     drawer.close()
                 }
@@ -50,6 +61,7 @@ ApplicationWindow {
                 text: qsTr("UserRegistration")
                 width: parent.width
                 onClicked: {
+                    currentmode = ''
                     stackView.push("UserRegistration.qml")
                     drawer.close()
                 }
@@ -58,6 +70,7 @@ ApplicationWindow {
                 text: qsTr("UserList")
                 width: parent.width
                 onClicked: {
+                    currentmode = ''
                     stackView.push("UserList.qml")
                     drawer.close()
                 }
@@ -66,6 +79,7 @@ ApplicationWindow {
                 text: qsTr("AuthorRegistration")
                 width: parent.width
                 onClicked: {
+                    currentmode = ''
                     stackView.push("Author.qml")
                     drawer.close()
                 }
@@ -74,6 +88,7 @@ ApplicationWindow {
                 text: qsTr("Book Add")
                 width: parent.width
                 onClicked: {
+                    currentmode = ''
                     stackView.push("Book.qml")
                     drawer.close()
                 }
