@@ -9,6 +9,8 @@ ApplicationWindow {
     title: qsTr("Stack")
     property alias footerlabel: footerlabel
     property string currentmode
+    property string authtoken
+    property alias logitem: logitem
 
     header: ToolBar {
         contentHeight: toolButton.implicitHeight
@@ -93,6 +95,16 @@ ApplicationWindow {
                     drawer.close()
                 }
             }
+            ItemDelegate {
+                text: qsTr("Login")
+                width: parent.width
+                onClicked: {
+                    currentmode = ''
+                    stackView.push("Login.qml")
+                    drawer.close()
+                }
+            }
+
         }
     }
 
@@ -112,5 +124,33 @@ ApplicationWindow {
             anchors.centerIn: parent
         }
     }
+
+    Item {
+        id: logitem
+        signal printLog(string data)
+        onPrintLog:  {
+            var xmlhttp = new XMLHttpRequest();
+
+            var theUrl = "http://localhost:3000/logs";
+            xmlhttp.open("POST", theUrl);
+            xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            var d = new Date();
+
+            var text1 =     '{"date":"' + (new Date()).toString() + '",'+
+                              '"info":"' + data + '"'
+                             +'}';
+            var obj1 = JSON.parse(text1)
+
+            xmlhttp.onreadystatechange=function() {
+                       if (xmlhttp.readyState === 4 && xmlhttp.status === 201) {
+                       }
+                       else if(xmlhttp.readyState == 4) {
+                       }
+                   }
+
+            xmlhttp.send(JSON.stringify(obj1));
+        }
+    }
+
 
 }

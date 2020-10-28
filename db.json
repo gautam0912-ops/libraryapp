@@ -1,6 +1,12 @@
 {
   "users": [
     {
+      "email": "admin@mail.com",
+      "password": "abcd"
+    }
+  ],
+  "bookusers": [
+    {
       "id": 1,
       "firstname": "test",
       "lastname": "test",
@@ -41,6 +47,12 @@
       "lastname": "wwwwwww",
       "datecreated": "Sat Oct 24 23:18:41 2020 GMT+0530",
       "id": 7
+    },
+    {
+      "firstname": "John",
+      "lastname": "Masa",
+      "datecreated": "Wed Oct 28 16:53:29 2020 GMT+0530",
+      "id": 8
     }
   ],
   "authors": [
@@ -112,7 +124,7 @@
       "name": "pppppppp",
       "description": "wwwwww",
       "publishdate": "Tue Aug 4 12:00:00 2020 GMT+0530",
-      "authors": "Fri Oct 30 12:00:00 2020 GMT+0530",
+      "authors": "Jeffery Archer",
       "availability": 0,
       "id": 4
     },
@@ -127,41 +139,42 @@
     },
     {
       "user": 7,
-      "availability_to": "Sat Oct 31 12:00:00 2020 GMT+0530",
+      "availability_to": "Wed Oct 28 19:17:51 2020 GMT+0530",
       "name": "nnnn",
       "description": "nnnnn",
       "publishdate": "Mon Sep 14 12:00:00 2020 GMT+0530",
-      "authors": "Sat Oct 31 12:00:00 2020 GMT+0530",
-      "availability": 0,
+      "authors": "Jeffery Archer",
+      "availability": 1,
       "id": 6
     },
     {
-      "user": 6,
+      "user": 4,
       "availability_to": "Sat Oct 31 12:00:00 2020 GMT+0530",
       "name": "Blood sweat and Tears",
       "description": "Bloody",
       "publishdate": "Mon Jun 8 12:00:00 2020 GMT+0530",
-      "authors": "Sat Oct 31 12:00:00 2020 GMT+0530",
+      "authors": "noah",
       "availability": 0,
       "id": 7
     },
     {
+      "user": 6,
+      "availability_to": "Sat Oct 31 12:00:00 2020 GMT+0530",
       "name": "Theory of Everything",
       "description": "About the universe",
-      "authors": "Richard Hawking",
       "publishdate": "Tue Sep 4 12:00:00 2018 GMT+0530",
-      "availability_to": "Wed Oct 28 15:05:26 2020 GMT+0530",
-      "availability": 1,
+      "authors": "Richard Hawking",
+      "availability": 0,
       "id": 8
     },
     {
       "user": 3,
-      "availability_to": "Sat Oct 31 12:00:00 2020 GMT+0530",
+      "availability_to": "Wed Oct 28 19:59:08 2020 GMT+0530",
       "name": "The Universe",
       "description": "about the universe",
       "publishdate": "Mon Mar 12 12:00:00 2018 GMT+0530",
-      "authors": "Sat Oct 31 12:00:00 2020 GMT+0530",
-      "availability": 0,
+      "authors": "Richard Hawking",
+      "availability": 1,
       "id": 9
     },
     {
@@ -183,11 +196,12 @@
       "id": 11
     },
     {
+      "user": 8,
+      "availability_to": "Wed Oct 28 19:54:58 2020 GMT+0530",
       "name": "Yoga for the mind",
       "description": "mind yoga",
-      "authors": "Deepak Chopra",
       "publishdate": "Mon Mar 2 12:00:00 2020 GMT+0530",
-      "availability_to": "Wed Oct 28 15:07:59 2020 GMT+0530",
+      "authors": "Deepak Chopra",
       "availability": 1,
       "id": 12
     },
@@ -201,26 +215,16 @@
       "id": 13
     }
   ],
-  "posts": [
+  "logs": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "date": "12/12/2020",
+      "info": "sample"
     },
     {
-      "id": 2,
-      "body": "some new comment",
-      "postId": 1
+      "date": "Wed Oct 28 19:59:15 2020 GMT+0530",
+      "info": "Book id=9 has been returned by3",
+      "id": 2
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

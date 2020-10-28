@@ -60,19 +60,30 @@ BookRentForm {
         booklistview.currentIndex = -1
     }
 
+    returnbutton.onClicked: {
+        rentFunction('return')
+    }
+
     rentbutton.onClicked: {
+        rentFunction('rent')
+    }
+
+    function rentFunction(type) {
         var xmlhttp = new XMLHttpRequest();
         var selid = -1
         selid = booklistmodel.get(booklistview.currentIndex).id
         var theUrl = "http://localhost:3000/books/"+selid;
         xmlhttp.open("PUT", theUrl);
         xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        console.info("Renting book......")
-        var d = new Date();
-        var dto = new Date(textInputAvailabletoFull)
-        if((d.toLocaleDateString() === dto.toLocaleDateString) || (dto <= d)) {
-            footerlabel.text = "Availableto date not set properly"
-            return
+
+        if(type === 'rent') {
+            console.info("Renting book......")
+            var d = new Date();
+            var dto = new Date(textInputAvailabletoFull)
+            if((d.toLocaleDateString() === dto.toLocaleDateString) || (dto <= d)) {
+                footerlabel.text = "Availableto date not set properly"
+                return
+            }
         }
 
         var usrid = -1
@@ -87,24 +98,49 @@ BookRentForm {
             return
         }
 
-        var text1 =     '{"user":' + usrid + ','+
-                          '"availability_to":"' + textInputAvailabletoFull + '",'+
-                '"name":"' + textInputName.text + '",'+
-                '"description":"' + textInputDescription.text + '",'+
-                '"publishdate":"' + textInputPublishDateFull + '",'+
-                '"authors":"' + textInputAvailabletoFull + '",'+
-                '"availability":0'
-                          +'}';
+        var text1 = ''
+        if(type === 'rent') {
+            text1 =     '{"user":' + usrid + ','+
+                              '"availability_to":"' + textInputAvailabletoFull + '",'+
+                    '"name":"' + textInputName.text + '",'+
+                    '"description":"' + textInputDescription.text + '",'+
+                    '"publishdate":"' + textInputPublishDateFull + '",'+
+                    '"authors":"' + textInputAuthors.text + '",'+
+                    '"availability":0'
+                              +'}';
+        }
+        else if(type === 'return') {
+            text1 =     '{"user":' + usrid + ','+
+                              '"availability_to":"' + (new Date()).toString() + '",'+
+                    '"name":"' + textInputName.text + '",'+
+                    '"description":"' + textInputDescription.text + '",'+
+                    '"publishdate":"' + textInputPublishDateFull + '",'+
+                    '"authors":"' + textInputAuthors.text + '",'+
+                    '"availability":1'
+                              +'}';
+        }
+
         var obj1 = JSON.parse(text1)
 
         xmlhttp.onreadystatechange=function() {
                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                       footerlabel.text = "Book has been rented successfully"
-                       textInputAvailable.text = 'NO'
-                       booklistmodel.setProperty(booklistview.currentIndex, 'available', 0)
+                       if(type === 'rent')
+                       {
+                           footerlabel.text = "Book id="+selid.toString()+" has been rented successfully to " + usrid.toString()
+                           textInputAvailable.text = 'NO'
+                           booklistmodel.setProperty(booklistview.currentIndex, 'available', 0)
+                           logitem.printLog(footerlabel.text)
+                       }
+                       else if(type === 'return')
+                       {
+                           footerlabel.text = "Book id="+selid.toString()+" has been returned by " + usrid.toString()
+                           textInputAvailable.text = 'YES'
+                           booklistmodel.setProperty(booklistview.currentIndex, 'available', 1)
+                           logitem.printLog(footerlabel.text)
+                       }
                    }
                    else if(xmlhttp.readyState == 4) {
-                       footerlabel.text = "Book rent failed"
+                       footerlabel.text = "Operation failed"
                    }
                }
 
@@ -165,7 +201,7 @@ BookRentForm {
     function getUserData() {
         var xmlhttp = new XMLHttpRequest();
 
-        var theUrl = "http://localhost:3000/users";
+        var theUrl = "http://localhost:3000/bookusers";
         console.info("Getting user list......")
 
         xmlhttp.onreadystatechange=function() {
@@ -185,6 +221,9 @@ BookRentForm {
         console.info('calling the URL.....')
         xmlhttp.open("GET", theUrl);
         xmlhttp.send();
+    }
+
+    addauthor.onClicked: {
     }
 
 }

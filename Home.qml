@@ -5,6 +5,10 @@ HomeForm {
         getBooks()
     }
 
+    onVisibleChanged: {
+        getBooks()
+    }
+
     function getBooks() {
             var xmlhttp = new XMLHttpRequest();
 

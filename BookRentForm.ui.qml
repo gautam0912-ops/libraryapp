@@ -26,7 +26,9 @@ Page {
     property alias usersbox: usersbox
     property alias usersmodel: usersmodel
     property alias rentbutton: rentbutton
+    property alias returnbutton: returnbutton
     property alias calendarrent: calendarrent
+    property alias addauthor: addauthor
 
     Rectangle {
         id: searchbox

@@ -27,7 +27,7 @@ UserListForm {
     function getData() {
         var xmlhttp = new XMLHttpRequest();
 
-        var theUrl = "http://localhost:3000/users";
+        var theUrl = "http://localhost:3000/bookusers";
         //xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         console.info("Getting user list......")
 
