@@ -80,15 +80,6 @@
       "authors": "sample"
     },
     {
-      "name": "rrrr",
-      "description": "rrrrr",
-      "authors": "Enid Blyton",
-      "publishdate": "Mon Oct 5 12:00:00 2020 GMT+0530",
-      "availability_to": "Tue Oct 27 12:51:50 2020 GMT+0530",
-      "availability": 1,
-      "id": 2
-    },
-    {
       "name": "wwwww",
       "description": "wwwww",
       "authors": "Jeffery Archer",
@@ -98,12 +89,13 @@
       "id": 3
     },
     {
+      "user": 3,
+      "availability_to": "Fri Oct 30 12:00:00 2020 GMT+0530",
       "name": "pppppppp",
       "description": "wwwwww",
-      "authors": "Noah",
       "publishdate": "Tue Aug 4 12:00:00 2020 GMT+0530",
-      "availability_to": "Tue Oct 27 12:54:48 2020 GMT+0530",
-      "availability": 1,
+      "authors": "Fri Oct 30 12:00:00 2020 GMT+0530",
+      "availability": 0,
       "id": 4
     },
     {

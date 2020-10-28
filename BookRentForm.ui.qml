@@ -21,8 +21,12 @@ Page {
     property alias textInputAuthors: textInputAuthors
     property alias textInputAvailable: textInputAvailable
     property alias textInputAvailableto: textInputAvailableto
+    property string textInputAvailabletoFull
+    property string textInputPublishDateFull
     property alias usersbox: usersbox
     property alias usersmodel: usersmodel
+    property alias rentbutton: rentbutton
+    property alias calendarrent: calendarrent
 
     Rectangle {
         id: searchbox
@@ -452,13 +456,13 @@ Page {
             verticalAlignment: Text.AlignVCenter
             padding: 5
         }
-        onClicked: calendar1.visible = true
+        onClicked: calendarrent.visible = true
     }
     Calendar {
         id: calendarrent
         visible: false
         x: 300
-        y: nametext.y + 180
+        y: nametext.y + 50
         z: 3
     }
 
