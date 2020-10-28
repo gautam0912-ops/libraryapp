@@ -5,10 +5,60 @@ Page {
     width: 600
     height: 400
 
-    title: qsTr("Home")
+    id: listpage
+    title: qsTr("Home Page")
+    property string totalbooks: '0'
+    property string totalrentedbooks: '0'
 
-    Label {
-        text: qsTr("You are on the home page.")
-        anchors.centerIn: parent
+    Rectangle {
+        anchors.fill: parent
+
+        Rectangle {
+            x: 20
+            y: 50
+            width: parent.width
+
+            Text {
+                text: "Welcome to the library application!!"
+                anchors.fill: parent
+                font {
+                    pixelSize: 30
+                    bold: true
+                }
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+
+        Rectangle {
+            x: 20
+            y: 110
+            width: parent.width
+            Text {
+                anchors.fill: parent
+                text: "Total number of books is " + totalbooks
+                font {
+                    pixelSize: 30
+                    bold: true
+                }
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+
+        Rectangle {
+            x: 20
+            y: 160
+            width: parent.width
+
+            Text {
+                anchors.fill: parent
+
+                text: "Total number of rentals is " + totalrentedbooks
+                font {
+                    pixelSize: 30
+                    bold: true
+                }
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
     }
 }

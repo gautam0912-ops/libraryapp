@@ -15,5 +15,6 @@
         <file>BookForm.ui.qml</file>
         <file>BookRent.qml</file>
         <file>BookRentForm.ui.qml</file>
+        <file>Home.qml</file>
     </qresource>
 </RCC>
