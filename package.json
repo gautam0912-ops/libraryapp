@@ -1,0 +1,19 @@
+{
+  "name": "libraryapp",
+  "version": "1.0.0",
+  "description": "this is the library application",
+  "main": "main.cpp",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gautam0912-ops/libraryapp.git"
+  },
+  "author": "gautam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gautam0912-ops/libraryapp/issues"
+  },
+  "homepage": "https://github.com/gautam0912-ops/libraryapp#readme"
+}
