@@ -7,6 +7,7 @@ LoginForm {
         var theUrl = "http://localhost:3000/login";
         xmlhttp.open("POST", theUrl);
         xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
         console.info("Logging in......")
         var d = new Date();
 
@@ -18,8 +19,10 @@ LoginForm {
         xmlhttp.onreadystatechange=function() {
                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                        footerlabel.text = "User login successfull"
-                       var obj = JSON.parse(doc.responseText);
+                       var obj = JSON.parse(xmlhttp.responseText);
                        authtoken = "Bearer " + obj.accessToken
+                       console.info(authtoken)
+                       logitem.authenticated()
                    }
                    else if(xmlhttp.readyState == 4) {
                        footerlabel.text = "User login failed"

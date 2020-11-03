@@ -128,6 +128,38 @@ ApplicationWindow {
     Item {
         id: logitem
         signal printLog(string data)
+        signal notAuthenticated()
+        signal authenticated()
+        property bool bLoginMode: false
+
+        onNotAuthenticated: {
+            /**
+            if (stackView.depth > 1) {
+                stackView.pop()
+            }
+            **/
+            if(bLoginMode === false) {
+                bLoginMode = true
+                currentmode = ''
+                stackView.push("Login.qml")
+                footerlabel.text = "Not Authenticated. Please log-in."
+            }
+        }
+
+        onAuthenticated: {
+            /***
+            if (stackView.depth > 1) {
+                stackView.pop()
+            }
+            currentmode = ''
+            ***/
+            if(bLoginMode === true) {
+                stackView.pop()
+                footerlabel.text = "Successully logged-in"
+                bLoginMode = false
+            }
+        }
+
         onPrintLog:  {
             var xmlhttp = new XMLHttpRequest();
 

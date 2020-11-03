@@ -6,6 +6,7 @@ AuthorForm {
 
         var theUrl = "http://localhost:3000/authors";
         xmlhttp.open("POST", theUrl);
+        xmlhttp.setRequestHeader('Authorization', authtoken);
         xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         console.info("Creating new author......")
         var d = new Date();

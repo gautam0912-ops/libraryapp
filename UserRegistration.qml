@@ -6,6 +6,7 @@ UserRegistrationForm {
 
         var theUrl = "http://localhost:3000/bookusers";
         xmlhttp.open("POST", theUrl);
+        xmlhttp.setRequestHeader('Authorization', authtoken);
         xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         console.info("Creating new user......")
         var d = new Date();

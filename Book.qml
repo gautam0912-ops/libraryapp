@@ -30,6 +30,7 @@ BookForm {
 
         var theUrl = "http://localhost:3000/books";
         xmlhttp.open("POST", theUrl);
+        xmlhttp.setRequestHeader('Authorization', authtoken);
         xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         console.info("Adding new book......")
         var d = new Date();
@@ -87,6 +88,7 @@ BookForm {
 
         console.info('calling the URL.....')
         xmlhttp.open("GET", theUrl);
+        xmlhttp.setRequestHeader('Authorization', authtoken);
         xmlhttp.send();
     }
 

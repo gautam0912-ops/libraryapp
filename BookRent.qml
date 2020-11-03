@@ -74,6 +74,7 @@ BookRentForm {
         selid = booklistmodel.get(booklistview.currentIndex).id
         var theUrl = "http://localhost:3000/books/"+selid;
         xmlhttp.open("PUT", theUrl);
+        xmlhttp.setRequestHeader('Authorization', authtoken);
         xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
         if(type === 'rent') {
@@ -213,6 +214,7 @@ BookRentForm {
 
         console.info('calling the URL.....')
         xmlhttp.open("GET", theUrl);
+        xmlhttp.setRequestHeader('Authorization', authtoken);
         xmlhttp.send();
     }
     function getUserData() {
@@ -237,6 +239,7 @@ BookRentForm {
 
         console.info('calling the URL.....')
         xmlhttp.open("GET", theUrl);
+        xmlhttp.setRequestHeader('Authorization', authtoken);
         xmlhttp.send();
     }
 

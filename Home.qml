@@ -16,6 +16,7 @@ HomeForm {
             console.info("Getting book list......")
             var totalbooksi = 0
             var totalrentedbooksi = 0
+            var authvalue = authtoken
 
             xmlhttp.onreadystatechange=function() {
                        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
@@ -31,6 +32,9 @@ HomeForm {
                            totalbooks = totalbooksi.toString()
                            totalrentedbooks = totalrentedbooksi.toString()
                        }
+                       else if(xmlhttp.readyState === 4 && xmlhttp.status === 401) {
+                            logitem.notAuthenticated()
+                       }
                        else if(xmlhttp.readyState === 4) {
                            footerlabel.text = "Getting book list failed"
                        }
@@ -38,6 +42,7 @@ HomeForm {
 
             console.info('calling the URL.....')
             xmlhttp.open("GET", theUrl);
+            xmlhttp.setRequestHeader('Authorization', authtoken);
             xmlhttp.send();
     }
 }

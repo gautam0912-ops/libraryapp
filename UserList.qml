@@ -47,6 +47,7 @@ UserListForm {
 
         console.info('calling the URL.....')
         xmlhttp.open("GET", theUrl);
+        xmlhttp.setRequestHeader('Authorization', authtoken);
         xmlhttp.send();
     }
 }

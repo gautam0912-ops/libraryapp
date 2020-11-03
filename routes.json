@@ -1,0 +1,7 @@
+{
+  "/users*": "/660/users$1",
+  "/bookusers*": "/660/bookusers$1",
+  "/authors*": "/660/authors$1",
+  "/books*": "/660/books$1",
+  "/logs*": "/660/logs$1"
+}
