@@ -1,6 +1,11 @@
 import QtQuick 2.4
 
 LoginForm {
+    onVisibleChanged: {
+        textInputUserName.activeFocus = true
+        textInputUserName.forceActiveFocus()
+    }
+
     loginbutton.onClicked: {
         var xmlhttp = new XMLHttpRequest();
 

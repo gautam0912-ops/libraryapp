@@ -16,9 +16,14 @@ Page {
         id: userlistview
         x: 70
         y: 30
-        width: 400
-        height: 160
+        width: 600
+        height: 200
         highlightRangeMode: ListView.NoHighlightRange
+        ScrollBar.vertical: ScrollBar {}
+        flickableDirection: Flickable.VerticalFlick
+        boundsBehavior: Flickable.StopAtBounds
+        clip: true
+        headerPositioning: ListView.OverlayHeader
 
         model: ListModel {
             id: userlistmodel
@@ -36,12 +41,12 @@ Page {
         header: Item {
             x: 5
             height: 40
-            width: 300
+            width: 600
             Row {
                 spacing: 10
 
                 Rectangle {
-                    width: 100
+                    width: 200
                     id: hcol1
                     anchors.left: parent.left
                     Text {

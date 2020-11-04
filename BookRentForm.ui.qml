@@ -47,6 +47,7 @@ Page {
             anchors.verticalCenter: parent.verticalCenter
             font.bold: true
             padding: 4
+            focus: true
         }
     }
     Button {
@@ -271,7 +272,6 @@ Page {
             text: qsTr("")
             font.pixelSize: 12
             padding: 5
-            focus: true
         }
     }
 
@@ -297,7 +297,6 @@ Page {
             text: qsTr("")
             font.pixelSize: 12
             padding: 5
-            focus: true
         }
     }
 
@@ -324,7 +323,6 @@ Page {
             text: qsTr("")
             font.pixelSize: 12
             padding: 5
-            focus: true
         }
     }
     Button {
@@ -374,7 +372,6 @@ Page {
             text: qsTr("")
             font.pixelSize: 12
             padding: 5
-            focus: true
         }
     }
     Rectangle {
@@ -431,7 +428,6 @@ Page {
             text: qsTr("")
             font.pixelSize: 12
             padding: 5
-            focus: true
         }
     }
     Rectangle {
@@ -447,7 +443,6 @@ Page {
             text: qsTr("")
             font.pixelSize: 12
             padding: 5
-            focus: true
         }
     }
     Button {

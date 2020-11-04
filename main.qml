@@ -48,6 +48,7 @@ ApplicationWindow {
                     currentmode = 'allbooks'
                     stackView.push("BookRent.qml")
                     drawer.close()
+                    stackView.forceActiveFocus()
                 }
             }
             ItemDelegate {
@@ -57,6 +58,7 @@ ApplicationWindow {
                     currentmode = 'allrents'
                     stackView.push("BookRent.qml")
                     drawer.close()
+                    stackView.forceActiveFocus()
                 }
             }
             ItemDelegate {
@@ -66,6 +68,7 @@ ApplicationWindow {
                     currentmode = ''
                     stackView.push("UserRegistration.qml")
                     drawer.close()
+                    stackView.forceActiveFocus()
                 }
             }
             ItemDelegate {
@@ -75,6 +78,7 @@ ApplicationWindow {
                     currentmode = ''
                     stackView.push("UserList.qml")
                     drawer.close()
+                    stackView.forceActiveFocus()
                 }
             }
             ItemDelegate {
@@ -84,6 +88,7 @@ ApplicationWindow {
                     currentmode = ''
                     stackView.push("Author.qml")
                     drawer.close()
+                    stackView.forceActiveFocus()
                 }
             }
             ItemDelegate {
@@ -93,6 +98,7 @@ ApplicationWindow {
                     currentmode = ''
                     stackView.push("Book.qml")
                     drawer.close()
+                    stackView.forceActiveFocus()
                 }
             }
             ItemDelegate {
@@ -102,6 +108,7 @@ ApplicationWindow {
                     currentmode = ''
                     stackView.push("Login.qml")
                     drawer.close()
+                    stackView.forceActiveFocus()
                 }
             }
 
@@ -112,6 +119,7 @@ ApplicationWindow {
         id: stackView
         initialItem: "Home.qml"
         anchors.fill: parent
+        focus: true
     }
 
     footer: ToolBar {
@@ -133,11 +141,6 @@ ApplicationWindow {
         property bool bLoginMode: false
 
         onNotAuthenticated: {
-            /**
-            if (stackView.depth > 1) {
-                stackView.pop()
-            }
-            **/
             if(bLoginMode === false) {
                 bLoginMode = true
                 currentmode = ''
@@ -147,12 +150,6 @@ ApplicationWindow {
         }
 
         onAuthenticated: {
-            /***
-            if (stackView.depth > 1) {
-                stackView.pop()
-            }
-            currentmode = ''
-            ***/
             if(bLoginMode === true) {
                 stackView.pop()
                 footerlabel.text = "Successully logged-in"

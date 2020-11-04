@@ -249,5 +249,4 @@ BookRentForm {
 
     addauthor.onClicked: {
     }
-
 }
