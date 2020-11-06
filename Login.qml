@@ -6,7 +6,15 @@ LoginForm {
         textInputUserName.forceActiveFocus()
     }
 
+    Keys.onPressed: {
+        console.info('loginbutton clicked='+event.key+', item='+activeFocusItem)
+            if ((event.key === Qt.Key_Return) && (activeFocusItem === loginbutton)) {
+                loginbutton.onClicked()
+            }
+        }
+
     loginbutton.onClicked: {
+        console.info('eeeeeeeeeeee---eee')
         var xmlhttp = new XMLHttpRequest();
 
         var theUrl = "http://localhost:3000/login";
@@ -38,3 +46,9 @@ LoginForm {
         xmlhttp.send(JSON.stringify(obj1));
     }
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/

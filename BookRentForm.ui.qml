@@ -48,6 +48,7 @@ Page {
             font.bold: true
             padding: 4
             focus: true
+            KeyNavigation.tab: searchboxbutton
         }
     }
     Button {
@@ -65,6 +66,7 @@ Page {
             verticalAlignment: Text.AlignVCenter
             padding: 5
         }
+        KeyNavigation.tab: booklistview
     }
 
     ListView {
@@ -94,6 +96,7 @@ Page {
         }
 
         header: Rectangle {
+
             x: 5
             height: 40
             width: 650
@@ -168,6 +171,8 @@ Page {
                 anchors.fill: parent
                 onClicked: booklistview.currentIndex = index
             }
+
+            Keys.onDownPressed: event.accepted = false
 
             Row {
                 spacing: 10

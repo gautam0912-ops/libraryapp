@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.5
 
 Page {
+    id: page
     width: 600
     height: 400
 
@@ -24,6 +25,7 @@ Page {
             font.pixelSize: 12
             padding: 5
             focus: true
+            KeyNavigation.tab: textInputPassword
         }
     }
 
@@ -61,12 +63,14 @@ Page {
             font.pixelSize: 12
             anchors.fill: parent
             padding: 5
+            KeyNavigation.tab: loginbutton
         }
     }
 
     Button {
         width: 200
         height: 42
+        checkable: true
         id: loginbutton
         x: 209
         y: 258

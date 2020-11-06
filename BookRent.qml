@@ -10,6 +10,23 @@ BookRentForm {
             }
         }
 
+    booklistview.onCurrentIndexChanged: {
+        setDataForIndex()
+    }
+
+    Keys.onPressed: {
+        console.info('clicked='+event.key+', item='+activeFocusItem)
+            if ((event.key === Qt.Key_Return) && (activeFocusItem === searchboxbutton)) {
+                searchboxbutton.onClicked()
+                event.accepted = true
+            }
+            else if ((event.key === Qt.Key_Return) && (activeFocusItem === booklistview)) {
+                booklistview.currentIndex = 0
+                setDataForIndex()
+                event.accepted = true
+            }
+    }
+
     function setDataForIndex() {
         console.info(booklistmodel.get(booklistview.currentIndex).name)
         textInputName.text = booklistmodel.get(booklistview.currentIndex).name
